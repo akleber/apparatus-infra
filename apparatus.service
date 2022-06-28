@@ -6,7 +6,7 @@ After=network.target
 EnvironmentFile=/opt/apparatus/apparatus.env
 User=apparatus
 WorkingDirectory=/opt/apparatus
-ExecStart=/opt/apparatus/venv/bin/waitress-serve --threads=2 apparatus:app
+ExecStart=/opt/apparatus/venv/bin/waitress-serve --threads=2 --host=localhost apparatus:app
 Restart=always
 
 [Install]

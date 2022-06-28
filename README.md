@@ -10,6 +10,8 @@
 PermitRootLogin prohibit-password
 PasswordAuthentication no
 
+ssh -i ~/.ssh/id_ed25519.apparatus root@event-apparatus.de
+
 ### set hostname
 
 hostnamectl set-hostname apparatus
@@ -31,10 +33,15 @@ scp -i ~/.ssh/id_ed25519.apparatus Caddyfile root@event-apparatus.de:/etc/caddy/
 caddy fmt --overwrite
 
 
-### user
+### apparatus
 
 adduser apparatus
-apt install git
+apt install git python3-venv sqlite3
 
+mkdir /opt/apparatus
+cd /opt/apparatus
 
-runuser -l apparatus -c 'git clone https://github.com/akleber/apparatus.git'
+runuser apparatus -c 'git clone https://github.com/akleber/apparatus.git'
+runuser apparatus -c 'python3 -m venv venv'
+runuser apparatus -c 'source venv/bin/activate && pip install -r requirements.txt'
+runuser apparatus -c 'sqlite3 apparatus.db < apparatus.sql'
