@@ -2,7 +2,6 @@
 
 ## Server settings
 
-
 ### pubkey login only
 
 /etc/ssh/sshd_config
@@ -32,7 +31,6 @@ apt install caddy
 scp -i ~/.ssh/id_ed25519.apparatus Caddyfile root@event-apparatus.de:/etc/caddy/
 caddy fmt --overwrite
 
-
 ### apparatus
 
 adduser apparatus
@@ -45,3 +43,5 @@ runuser apparatus -c 'git clone https://github.com/akleber/apparatus.git'
 runuser apparatus -c 'python3 -m venv venv'
 runuser apparatus -c 'source venv/bin/activate && pip install -r requirements.txt'
 runuser apparatus -c 'sqlite3 apparatus.db < apparatus.sql'
+
+ln -s /opt/apparatus-infra/apparatus.service /etc/systemd/system/apparatus.service
