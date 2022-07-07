@@ -3,7 +3,7 @@ Description=apparatus web application
 After=network.target
 
 [Service]
-EnvironmentFile=/opt/apparatus/apparatus.env
+EnvironmentFile=/opt/apparatus-infra/apparatus.env
 User=apparatus
 WorkingDirectory=/opt/apparatus
 ExecStart=/opt/apparatus/venv/bin/waitress-serve --threads=2 --host=localhost apparatus:app
