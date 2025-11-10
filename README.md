@@ -4,14 +4,15 @@
 
 ### pubkey login only
 
+```
+ssh-keygen -t ed25519 -C "ionos apparatus"
+ssh -i ~/.ssh/id_ed25519.apparatus root@event-apparatus.de
+```
+
 /etc/ssh/sshd_config
 ```
 PermitRootLogin prohibit-password
 PasswordAuthentication no
-```
-
-```
-ssh -i ~/.ssh/id_ed25519.apparatus root@event-apparatus.de
 ```
 
 ### set hostname
