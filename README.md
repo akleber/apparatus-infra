@@ -63,7 +63,7 @@ ln -s /opt/apparatus-infra/apparatus.service /etc/systemd/system/apparatus.servi
 scp -i ~/.ssh/id_ed25519.apparatus root@event-apparatus.de:/opt/apparatus/event.db .
 ```
 
-### generyte secret token
+### generate secret token
 
 ```
 python3 -c "import secrets;print(secrets.token_hex(24))"
