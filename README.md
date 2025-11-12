@@ -6,7 +6,7 @@
 
 ```
 ssh-keygen -t ed25519 -C "ionos apparatus"
-ssh-copy-id -i ~/.ssh/id_ed25519.linkwarden.pub root@event-apparatus.de
+ssh-copy-id -i ~/.ssh/id_ed25519.apparatus.pub root@event-apparatus.de
 ssh -i ~/.ssh/id_ed25519.apparatus root@event-apparatus.de
 ```
 
