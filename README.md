@@ -16,6 +16,10 @@ PermitRootLogin prohibit-password
 PasswordAuthentication no
 ```
 
+```
+systemctl reload sshd
+```
+
 ### set hostname
 
 ```
